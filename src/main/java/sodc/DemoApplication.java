@@ -1,4 +1,4 @@
-package com.example.sodc;
+package sodc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
