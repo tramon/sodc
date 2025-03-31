@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: reset-users-table
+      author: tramon
+      runAlways: true
+      changes:
+        - sqlFile:
+            path: db/changelog/init-users.sql
+            splitStatements: true
+            stripComments: true
+        - sqlFile:
+            path: db/changelog/pre-populate-users.sql
+            splitStatements: true
+            stripComments: true

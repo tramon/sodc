@@ -49,7 +49,7 @@ public class UserController {
                 ResponseEntity.notFound().build();
     }
 
-    // -- @DeleteMapping("/{id}") — wokrs as DELETE /users/{id}
+    // -- @DeleteMapping("/{id}") — works as DELETE /users/{id}
     // -- @PathVariable Long id — gets id of the user from the URL
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {

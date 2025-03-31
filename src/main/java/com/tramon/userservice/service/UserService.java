@@ -3,6 +3,7 @@ package com.tramon.userservice.service;
 
 import com.tramon.userservice.entity.UserEntity;
 import com.tramon.userservice.repository.UserRepository;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -29,6 +30,9 @@ public class UserService {
         return userRepository.findById(id);
     }
 
+    // @Transactional — Spring annotation - method works as one transaction
+    // commit on success, and rollback on failure
+    @Transactional
     public UserEntity updateUser(Long id, UserEntity updatedUser) {
         return userRepository.findById(id).map(user -> {
             user.setName(updatedUser.getName());
@@ -38,7 +42,6 @@ public class UserService {
     }
 
     public void deleteUser(Long id) {
-        // userRepository.deleteById(id) видаляє запис із бази за його id.
         userRepository.deleteById(id);
     }
 
