@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'user-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+#       - targets: ['host.docker.internal:8081']
+#      - targets: ['localhost:8081']
+      - targets: ['172.19.64.1:8081']
+#      - targets: ['user-service:8081']
